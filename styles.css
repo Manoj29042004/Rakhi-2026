@@ -1,0 +1,629 @@
+/* Custom Fonts Imports */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Rozha+One&display=swap');
+
+:root {
+  --bg-dark: #0a030c;
+  --bg-card: rgba(26, 10, 30, 0.75);
+  
+  --primary-gold: #ffd700;
+  --gold-glow: #ffb700;
+  --saffron: #ff8c00;
+  --saffron-light: #ffaa33;
+  --royal-purple: #4c1d95;
+  --royal-purple-dark: #2e1065;
+  --crimson: #dc2626;
+  --crimson-dark: #7f1d1d;
+  
+  --text-primary: #fff9f2;
+  --text-secondary: #f3d9fa;
+  --text-gold: #ffe066;
+  
+  --border-gold: rgba(255, 215, 0, 0.4);
+  --shadow-royal: 0 0 35px rgba(255, 215, 0, 0.3), 0 10px 40px rgba(76, 29, 149, 0.5);
+  
+  --font-serif: 'Rozha One', 'Cinzel', serif;
+  --font-heading: 'Cinzel', serif;
+  --font-cursive: 'Great Vibes', cursive;
+  --font-sans: 'Outfit', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 10% 75%, rgba(255, 140, 0, 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(220, 38, 38, 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #0a030c 0%, #050107 100%);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background Particle Canvas */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Floating Decorative Diyas */
+.diya-decorations {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.diya-item {
+  position: absolute;
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 15px rgba(255, 183, 0, 0.9));
+  opacity: 0.8;
+  animation: floatDiya 8s ease-in-out infinite alternate;
+}
+
+.diya-item:nth-child(1) { top: 10%; left: 4%; animation-duration: 9s; }
+.diya-item:nth-child(2) { top: 20%; right: 5%; animation-duration: 7.5s; animation-delay: -2s; }
+.diya-item:nth-child(3) { top: 65%; left: 3%; animation-duration: 11s; animation-delay: -4s; }
+.diya-item:nth-child(4) { top: 80%; right: 4%; animation-duration: 8.5s; animation-delay: -1s; }
+
+@keyframes floatDiya {
+  0% { transform: translateY(0px) rotate(-4deg); }
+  50% { transform: translateY(-18px) rotate(4deg); }
+  100% { transform: translateY(6px) rotate(-2deg); }
+}
+
+/* Audio Control Floating Badge */
+.audio-controller {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  background: rgba(26, 10, 30, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-royal);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.audio-controller:hover {
+  transform: scale(1.04);
+  border-color: var(--primary-gold);
+}
+
+.audio-icon {
+  font-size: 1.2rem;
+  color: var(--primary-gold);
+}
+
+.audio-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Section Header Styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-tag {
+  font-family: var(--font-heading);
+  color: var(--saffron-light);
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary-gold) 50%, var(--saffron) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* HERO SECTION - Animated Queen Crowning */
+.hero-section {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 70px 20px 40px;
+  position: relative;
+}
+
+.royal-crown-wrapper {
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  animation: crownFloat 4s ease-in-out infinite alternate;
+}
+
+.queen-crown-svg {
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
+}
+
+@keyframes crownFloat {
+  0% { transform: translateY(0px) scale(0.98); filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.7)); }
+  100% { transform: translateY(-12px) scale(1.05); filter: drop-shadow(0 0 40px rgba(255, 215, 0, 1)); }
+}
+
+.hero-royal-badge {
+  background: linear-gradient(90deg, rgba(76, 29, 149, 0.5), rgba(220, 38, 38, 0.4), rgba(255, 140, 0, 0.5));
+  border: 1px solid var(--primary-gold);
+  border-radius: 30px;
+  padding: 8px 24px;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary-gold);
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-royal);
+  backdrop-filter: blur(10px);
+}
+
+.hero-main-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.queen-name-highlight {
+  font-family: var(--font-cursive);
+  font-size: clamp(4rem, 9vw, 6.5rem);
+  color: var(--primary-gold);
+  text-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 50px rgba(124, 58, 237, 0.6);
+  display: block;
+  line-height: 1;
+  margin-top: 10px;
+}
+
+.hero-subtext {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 750px;
+  margin: 20px auto 35px;
+  line-height: 1.7;
+}
+
+/* 3 Brother Signatures Badge */
+.brothers-tribute-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.brother-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-gold);
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  animation: badgeGlow 3s ease-in-out infinite alternate;
+}
+
+.brother-badge:nth-child(1) { animation-delay: 0s; }
+.brother-badge:nth-child(2) { animation-delay: 1s; }
+.brother-badge:nth-child(3) { animation-delay: 2s; }
+
+@keyframes badgeGlow {
+  0% { border-color: rgba(255, 215, 0, 0.3); transform: translateY(0); }
+  100% { border-color: rgba(255, 215, 0, 0.9); transform: translateY(-3px); box-shadow: var(--shadow-royal); }
+}
+
+
+/* SECTION 1: REAL FAMILY PHOTO ROYAL CENTERPIECE */
+.royal-centerpiece-section {
+  padding: 60px 0 60px;
+  text-align: center;
+}
+
+.royal-frame-container {
+  max-width: 820px;
+  margin: 0 auto;
+  position: relative;
+  padding: 18px;
+  background: linear-gradient(135deg, #ffd700 0%, #ff8c00 50%, #dc2626 100%);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(255, 215, 0, 0.5);
+  animation: framePulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes framePulse {
+  0% { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4); }
+  100% { box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 70px rgba(255, 215, 0, 0.8); }
+}
+
+.royal-frame-inner {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background: #0a030c;
+  max-height: 520px;
+}
+
+.royal-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.07) translate(-10px, -5px); }
+}
+
+.royal-frame-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 20px 20px;
+  background: linear-gradient(0deg, rgba(10, 3, 12, 0.95) 0%, rgba(10, 3, 12, 0.7) 70%, transparent 100%);
+  color: var(--primary-gold);
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.royal-frame-subcaption {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+
+/* SECTION 1B: QUEEN HONEY'S ROYAL PHOTO ALBUM */
+.queen-album-section {
+  padding: 60px 0 80px;
+}
+
+.royal-album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.album-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.album-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-gold);
+  box-shadow: var(--shadow-royal);
+}
+
+.album-img-box {
+  width: 100%;
+  height: 250px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.album-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.album-card:hover .album-img-box img {
+  transform: scale(1.08);
+}
+
+.album-card-caption {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--primary-gold);
+  text-align: center;
+  margin-top: 14px;
+}
+
+
+/* SECTION 2: AUTO-TIED RAKHI TRIBUTES (MANOJ, DANOJ, SAI) */
+.brother-tributes-section {
+  padding: 80px 0;
+}
+
+.tributes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.tribute-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tribute-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-gold);
+  box-shadow: var(--shadow-royal);
+}
+
+.tribute-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  background: linear-gradient(90deg, var(--saffron), var(--primary-gold), var(--crimson));
+}
+
+.brother-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(124, 58, 237, 0.3));
+  border: 2px solid var(--primary-gold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+.brother-name-title {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  color: var(--primary-gold);
+  margin-bottom: 4px;
+}
+
+.brother-role-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.auto-rakhi-glow-box {
+  width: 120px;
+  height: 120px;
+  margin: 15px 0;
+  position: relative;
+}
+
+.rakhi-glowing-svg {
+  width: 100%;
+  height: 100%;
+  animation: rakhiSpinGlow 8s linear infinite;
+}
+
+@keyframes rakhiSpinGlow {
+  0% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.6)); }
+  50% { transform: rotate(180deg) scale(1.05); filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.9)); }
+  100% { transform: rotate(360deg) scale(1); filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.6)); }
+}
+
+.tied-status-pill {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.3));
+  border: 1px solid #34d399;
+  color: #a7f3d0;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+.tribute-blessing-text {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 215, 0, 0.06);
+  border: 1px dashed var(--border-gold);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+
+/* SECTION 3: OPEN ROYAL PARCHMENT SCROLL LETTERS (MANOJ, DANOJ, SAI) */
+.letters-section {
+  padding: 80px 0;
+}
+
+.scrolls-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 35px;
+  margin-top: 40px;
+}
+
+.parchment-scroll {
+  background: linear-gradient(135deg, #1b0a1f 0%, #290f2e 100%);
+  border: 2px solid var(--primary-gold);
+  border-radius: 20px;
+  padding: 36px 30px;
+  position: relative;
+  box-shadow: var(--shadow-royal);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease;
+}
+
+.parchment-scroll:hover {
+  transform: translateY(-6px);
+}
+
+.scroll-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.scroll-icon {
+  font-size: 2.2rem;
+}
+
+.scroll-from-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--primary-gold);
+}
+
+.scroll-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  opacity: 0.85;
+}
+
+.scroll-body {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  white-space: pre-line;
+}
+
+.scroll-signature {
+  margin-top: 25px;
+  font-family: var(--font-cursive);
+  font-size: 1.8rem;
+  color: var(--primary-gold);
+  text-align: right;
+}
+
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  margin-top: 70px;
+}
+
+.footer-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--primary-gold);
+  margin-bottom: 10px;
+}
+
+.footer-names {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.footer-subtext {
+  font-size: 0.9rem;
+  color: rgba(255, 249, 242, 0.6);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .queen-name-highlight {
+    font-size: 4rem;
+  }
+  .tributes-grid, .scrolls-container, .royal-album-grid {
+    grid-template-columns: 1fr;
+  }
+  .royal-frame-caption {
+    font-size: 1.2rem;
+  }
+}

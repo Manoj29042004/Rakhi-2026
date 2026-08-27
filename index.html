@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queen Honey's Rakshabandhan Royal Tribute 👑 | From Manoj, Danoj & Sai</title>
+  <meta name="description" content="A digital Rakshabandhan memory tribute dedicated to Queen Honey from her 3 loving brothers: Manoj, Danoj, and Sai." />
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating Particle & Petal Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Floating Decorative Diyas -->
+  <div class="diya-decorations">
+    <div class="diya-item">🪔</div>
+    <div class="diya-item">🪔</div>
+    <div class="diya-item">🪔</div>
+    <div class="diya-item">🪔</div>
+  </div>
+
+  <!-- Ambient Audio Control Floating Button -->
+  <div class="audio-controller" id="audio-toggle-btn" title="Toggle Festive Chimes">
+    <span class="audio-icon">🎵</span>
+    <span class="audio-text">Soundscape On</span>
+  </div>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- HERO SECTION: Animated Queen Crowning -->
+    <section class="hero-section">
+      <!-- Animated Descending Royal Crown -->
+      <div class="royal-crown-wrapper">
+        <svg class="queen-crown-svg" viewBox="0 0 100 100">
+          <path d="M10 70 L20 30 L40 50 L50 20 L60 50 L80 30 L90 70 Z" fill="url(#crownGold)" stroke="#ffffff" stroke-width="2" />
+          <circle cx="20" cy="25" r="5" fill="#dc2626" />
+          <circle cx="50" cy="15" r="6" fill="#ffd700" />
+          <circle cx="80" cy="25" r="5" fill="#dc2626" />
+          <rect x="15" y="70" width="70" height="10" rx="3" fill="#4c1d95" stroke="#ffd700" stroke-width="1.5" />
+          <defs>
+            <linearGradient id="crownGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd700" />
+              <stop offset="50%" stop-color="#ff8c00" />
+              <stop offset="100%" stop-color="#ffd700" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="hero-royal-badge">👑 Royal Tribute • Rakshabandhan 2026 👑</div>
+      
+      <h1 class="hero-main-title">
+        Dedicated To Our One & Only
+        <span class="queen-name-highlight">Queen Honey 👑</span>
+      </h1>
+
+      <p class="hero-subtext">
+        A timeless memory created to honor our sister who rules our hearts with grace, warmth, and unconditional love. Forever cherished by her 3 brothers!
+      </p>
+
+      <div class="brothers-tribute-row">
+        <div class="brother-badge"><span>💙</span> Manoj</div>
+        <div class="brother-badge"><span>💚</span> Danoj</div>
+        <div class="brother-badge"><span>💛</span> Sai</div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: REAL FAMILY PHOTO ROYAL CENTERPIECE -->
+    <section class="royal-centerpiece-section">
+      <div class="section-header">
+        <span class="section-tag">ROYAL PORTRAIT</span>
+        <h2 class="section-title">The Queen & Her 3 Brothers 🖼️</h2>
+        <p class="section-subtitle">
+          Queen Honey surrounded by her 3 pillars of strength and happiness: Manoj, Danoj, and Sai.
+        </p>
+      </div>
+
+      <div class="royal-frame-container">
+        <div class="royal-frame-inner">
+          <img class="royal-photo-img" src="assets/honey_and_3_brothers.jpg" alt="Manoj, Danoj, Sai & Queen Honey" />
+          <div class="royal-frame-caption">
+            Queen Honey With Manoj, Danoj & Sai 👑
+            <div class="royal-frame-subcaption">"One Sister, Three Brothers, Infinite Memories & Unbreakable Bond"</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1B: QUEEN HONEY'S ROYAL PHOTO ALBUM -->
+    <section class="queen-album-section">
+      <div class="section-header">
+        <span class="section-tag">HER MAJESTY'S GALLERY</span>
+        <h2 class="section-title">Queen Honey's Photo Album 📸✨</h2>
+        <p class="section-subtitle">
+          Cherished memories of our queen. Easily add your favorite Google Photos of Honey into the project's <code>assets</code> folder!
+        </p>
+      </div>
+
+      <div class="royal-album-grid">
+        <!-- Main Real Photo -->
+        <div class="album-card">
+          <div class="album-img-box">
+            <img src="assets/honey_and_3_brothers.jpg" alt="Queen Honey with Brothers" />
+          </div>
+          <div class="album-card-caption">Queen Honey with Manoj, Danoj & Sai 💖</div>
+        </div>
+
+        <!-- Slot 2 -->
+        <div class="album-card">
+          <div class="album-img-box">
+            <img src="assets/honey1.jpg" alt="Queen Honey" onerror="this.src='assets/diya_decor.png'" />
+          </div>
+          <div class="album-card-caption">Her Royal Highness Honey 🌸</div>
+        </div>
+
+        <!-- Slot 3 -->
+        <div class="album-card">
+          <div class="album-img-box">
+            <img src="assets/honey2.jpg" alt="Queen Honey Memories" onerror="this.src='assets/rakhi_hero.png'" />
+          </div>
+          <div class="album-card-caption">Smiles & Sunshine ✨</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: AUTO-TIED RAKHI TRIBUTES -->
+    <section class="brother-tributes-section">
+      <div class="section-header">
+        <span class="section-tag">ROYAL TRIBUTES & BLESSINGS</span>
+        <h2 class="section-title">3 Brothers • 3 Golden Rakhis 🎗️</h2>
+        <p class="section-subtitle">
+          Three golden Rakhis permanently tied with affection, protection, and lifelong devotion.
+        </p>
+      </div>
+
+      <div class="tributes-grid">
+        <!-- BROTHER 1: MANOJ -->
+        <div class="tribute-card">
+          <div class="brother-avatar">👑</div>
+          <h3 class="brother-name-title">Manoj</h3>
+          <p class="brother-role-subtitle">Elder Brother • The Royal Shield 💙</p>
+          
+          <div class="auto-rakhi-glow-box">
+            <svg class="rakhi-glowing-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="url(#rakhiGrad1)" stroke="#ffd700" stroke-width="2.5" />
+              <path d="M5 50 L95 50" stroke="#dc2626" stroke-width="4" stroke-linecap="round" />
+              <circle cx="50" cy="50" r="22" fill="#4c1d95" />
+              <circle cx="50" cy="50" r="12" fill="#ffd700" />
+              <circle cx="50" cy="50" r="6" fill="#ffffff" />
+              <defs>
+                <linearGradient id="rakhiGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffd700" />
+                  <stop offset="100%" stop-color="#ff8c00" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="tied-status-pill">✨ Tied with Royal Love ❤️</div>
+
+          <div class="tribute-blessing-text">
+            "Honey, watching you rule our family with your gentle heart fills me with pride. I promise to protect your smile and stand by your side forever!"
+          </div>
+        </div>
+
+        <!-- BROTHER 2: DANOJ -->
+        <div class="tribute-card">
+          <div class="brother-avatar">🌟</div>
+          <h3 class="brother-name-title">Danoj</h3>
+          <p class="brother-role-subtitle">Middle Brother • The Royal Cheer 💚</p>
+          
+          <div class="auto-rakhi-glow-box">
+            <svg class="rakhi-glowing-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="url(#rakhiGrad2)" stroke="#ffd700" stroke-width="2.5" />
+              <path d="M5 50 L95 50" stroke="#ff8c00" stroke-width="4" stroke-linecap="round" />
+              <circle cx="50" cy="50" r="22" fill="#10b981" />
+              <circle cx="50" cy="50" r="12" fill="#ffd700" />
+              <circle cx="50" cy="50" r="6" fill="#ffffff" />
+              <defs>
+                <linearGradient id="rakhiGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#dc2626" />
+                  <stop offset="100%" stop-color="#9d174d" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="tied-status-pill">✨ Tied with Royal Love ❤️</div>
+
+          <div class="tribute-blessing-text">
+            "Happy Rakshabandhan to our favorite person! Thank you for bringing endless cheer, laughter, and light into all 3 of our lives!"
+          </div>
+        </div>
+
+        <!-- BROTHER 3: SAI -->
+        <div class="tribute-card">
+          <div class="brother-avatar">⚡</div>
+          <h3 class="brother-name-title">Sai</h3>
+          <p class="brother-role-subtitle">Younger Brother • The Royal Sunshine 💛</p>
+          
+          <div class="auto-rakhi-glow-box">
+            <svg class="rakhi-glowing-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="url(#rakhiGrad3)" stroke="#ffd700" stroke-width="2.5" />
+              <path d="M5 50 L95 50" stroke="#9d174d" stroke-width="4" stroke-linecap="round" />
+              <circle cx="50" cy="50" r="22" fill="#f59e0b" />
+              <circle cx="50" cy="50" r="12" fill="#ffffff" />
+              <circle cx="50" cy="50" r="6" fill="#dc2626" />
+              <defs>
+                <linearGradient id="rakhiGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff8c00" />
+                  <stop offset="100%" stop-color="#ffd700" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="tied-status-pill">✨ Tied with Royal Love ❤️</div>
+
+          <div class="tribute-blessing-text">
+            "Honey Didi, you are truly the heart of our family. I will always look up to you, adore you, and be there whenever you need me!"
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: OPEN ROYAL PARCHMENT SCROLL LETTERS -->
+    <section class="letters-section">
+      <div class="section-header">
+        <span class="section-tag">ROYAL DECREES & LETTERS</span>
+        <h2 class="section-title">Letters From Manoj, Danoj & Sai 📜</h2>
+        <p class="section-subtitle">
+          Heartfelt messages dedicated to Queen Honey from each of her 3 brothers.
+        </p>
+      </div>
+
+      <div class="scrolls-container">
+        <!-- SCROLL 1: MANOJ -->
+        <div class="parchment-scroll">
+          <div class="scroll-header">
+            <span class="scroll-icon">💙</span>
+            <div>
+              <h3 class="scroll-from-title">Letter from Manoj</h3>
+              <p class="scroll-subtitle">Elder Brother's Promise</p>
+            </div>
+          </div>
+          <div class="scroll-body">
+Dearest Queen Honey,
+
+As your elder brother, watching you grow into such a kind, wise, and wonderful person has been one of my greatest blessings.
+
+You rule our family with your warmth and affection. No matter where life takes us, remember that I will always stand as your shield, your advisor, and your biggest protector. On this Rakshabandhan, I promise to guard your happiness forever!
+          </div>
+          <div class="scroll-signature">With all my love, Manoj 💙</div>
+        </div>
+
+        <!-- SCROLL 2: DANOJ -->
+        <div class="parchment-scroll">
+          <div class="scroll-header">
+            <span class="scroll-icon">💚</span>
+            <div>
+              <h3 class="scroll-from-title">Letter from Danoj</h3>
+              <p class="scroll-subtitle">Middle Brother's Tribute</p>
+            </div>
+          </div>
+          <div class="scroll-body">
+Dearest Honey,
+
+Happy Rakshabandhan to the ruler of our hearts! Having you as our one and only sister is the best gift Manoj, Sai, and I could ever ask for.
+
+Thank you for all our shared laughs, our secret jokes, and for making our home feel so full of warmth and celebration. I promise to always bring a smile to your face whenever you need it!
+          </div>
+          <div class="scroll-signature">With lots of love, Danoj 💚</div>
+        </div>
+
+        <!-- SCROLL 3: SAI -->
+        <div class="parchment-scroll">
+          <div class="scroll-header">
+            <span class="scroll-icon">💛</span>
+            <div>
+              <h3 class="scroll-from-title">Letter from Sai</h3>
+              <p class="scroll-subtitle">Younger Brother's Love</p>
+            </div>
+          </div>
+          <div class="scroll-body">
+Dear Honey Didi,
+
+You are truly the sunshine of our lives. Even when we bicker or tease each other, you know how deeply I respect and adore you.
+
+Thank you for always caring for me, guiding me, and backing me up! Today and every single day, I promise to make you proud and stay by your side forever.
+          </div>
+          <div class="scroll-signature">Always your little brother, Sai 💛</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-title">Happy Rakshabandhan, Queen Honey! 👑🌸</div>
+    <div class="footer-names">Created with infinite love by Manoj, Danoj & Sai</div>
+    <div class="footer-subtext">A timeless digital memory for our one & only sister</div>
+  </footer>
+
+  <!-- Application JS Script -->
+  <script src="app.js"></script>
+</body>
+</html>
